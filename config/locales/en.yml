@@ -1,0 +1,9 @@
+en:
+  blacklight_search:
+    display_name: "Blacklight"
+    short_display_name: "record"
+    see_all_message: "Find more records in Blacklight"
+    search_form_placeholder: "Search for records in Blacklight"
+    module_callout: "Search for records in Blacklight"
+    error_service_message: "searching records in Blacklight"
+    no_results_service_message: "a different search for articles from blacklight"
