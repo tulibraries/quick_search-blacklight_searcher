@@ -2,7 +2,7 @@ module QuickSearch
   class BlacklightSearcher < QuickSearch::Searcher
 
     def search
-      @response = search_results({query: http_request_queries["not_escaped"]})
+      @response = search_results({q: http_request_queries["not_escaped"]})
     end
 
     def results
@@ -34,7 +34,7 @@ module QuickSearch
     end
 
     def link(record)
-       record = Rails.application.routes.url_helpers.solr_document_url(item["id"], :only_path => true)
+      Rails.application.routes.url_helpers.solr_document_url(record["id"], :only_path => true)
     end
   end
 end
