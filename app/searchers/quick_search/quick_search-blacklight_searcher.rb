@@ -16,6 +16,7 @@ module QuickSearch
           result.link =  Rails.application.routes.url_helpers.solr_document_url(record["id"], :only_path => true)
           result.author = record.fetch('creator_display', []).first
           @results_list << result
+          puts result
         end
         @results_list
       end
