@@ -37,7 +37,7 @@ module QuickSearch
     #   Rails.application.routes.url_helpers.solr_document_url(record["id"], :only_path => true)
     # end
   end
-
+end
 
 class SearchHelperWrapper
   include Blacklight::SearchHelper
@@ -49,5 +49,4 @@ class SearchHelperWrapper
   def self.search_results(args)
      self.new.search_results(args)
   end
-end
 end
