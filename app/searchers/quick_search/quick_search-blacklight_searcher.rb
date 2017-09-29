@@ -2,7 +2,7 @@ module QuickSearch
   class BlacklightSearcher < QuickSearch::Searcher
 
     def search
-      @response = search_results({q: http_request_queries["not_escaped"]})
+      @response = search_results({query: http_request_queries["not_escaped"]})
     end
 
     def results
