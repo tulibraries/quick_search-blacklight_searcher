@@ -34,7 +34,7 @@ module QuickSearch
     end
 
     def link(record)
-       Rails.application.routes.url_helpers.solr_document_url(item["id"], :only_path => true)
+       record[Rails.application.routes.url_helpers.solr_document_url(item["id"], :only_path => true)]
     end
   end
 end
