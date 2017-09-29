@@ -25,19 +25,19 @@ module QuickSearch
       SearchHelperWrapper.search_results(args).first["response"]["docs"]
     end
 
-    def title(record)
-      record.fetch('title_display', []).first
-    end
-
-    def author(record)
-      record.fetch('creator_display', []).first
-    end
-
-    def link(record)
-      Rails.application.routes.url_helpers.solr_document_url(record["id"], :only_path => true)
-    end
+    # def title(record)
+    #   record.fetch('title_display', []).first
+    # end
+    #
+    # def author(record)
+    #   record.fetch('creator_display', []).first
+    # end
+    #
+    # def link(record)
+    #   Rails.application.routes.url_helpers.solr_document_url(record["id"], :only_path => true)
+    # end
   end
-end
+
 
 class SearchHelperWrapper
   include Blacklight::SearchHelper
@@ -49,4 +49,5 @@ class SearchHelperWrapper
   def self.search_results(args)
      self.new.search_results(args)
   end
+end
 end
