@@ -24,6 +24,18 @@ module QuickSearch
     def search_results(args)
       SearchHelperWrapper.search_results(args).first["response"]["docs"]
     end
+
+    def title(record)
+      record['title_display']
+    end
+
+    def author(record)
+      record['creator_display']
+    end
+
+    def link(record)
+       Rails.application.routes.url_helpers.solr_document_url(item["id"], :only_path => true)
+    end
   end
 end
 
