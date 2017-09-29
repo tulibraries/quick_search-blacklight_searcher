@@ -26,11 +26,11 @@ module QuickSearch
     end
 
     def title(record)
-      record.fetch()'title_display', []).first
+      record.fetch('title_display', []).first
     end
 
     def author(record)
-      record.fetch()'creator_display', []).first
+      record.fetch('creator_display', []).first
     end
 
     def link(record)
