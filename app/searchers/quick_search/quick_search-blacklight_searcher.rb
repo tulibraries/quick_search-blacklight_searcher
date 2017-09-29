@@ -12,9 +12,9 @@ module QuickSearch
         @results_list = []
         @response.each do |record|
           result = OpenStruct.new
-          result.title = title(record)
-          result.link = link(record)
-          result.author = author(record)
+          result.title = record.fetch('title_display', []).first
+          result.link =  Rails.application.routes.url_helpers.solr_document_url(record["id"], :only_path => true)
+          result.author = record.fetch('creator_display', []).first
           @results_list << result
         end
         @results_list
